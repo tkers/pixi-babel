@@ -36,7 +36,8 @@ export default {
                 path.resolve(__dirname, "../src")
             ],
             loader: "babel-loader",
-        }]
+        }],
+        noParse: /node_modules/
     },
 
     eslint: {
