@@ -1,60 +1,10 @@
 import PIXI from "pixi.js";
+import initRenderer from "./initRenderer";
+import preloadResources from "./preloadResources";
+import getTexture from "./getTexture";
 
 // "Global" variables we need to use across multiple functions
 let demoStage, ghostSprite;
-
-/**
- *  Creates the Renderer
- *
- *  @returns {PIXIRenderer}
- */
-const initRenderer = () => {
-
-    // Create the renderer (auto detect Canvas / WebGL)
-    const renderer = PIXI.autoDetectRenderer(640, 320, {
-        antialias: false,
-        transparent: false,
-        resolution: 1
-    });
-
-    // Style the renderer
-    renderer.view.className = "renderArea";
-
-    // Add to the DOM
-    document.getElementById("main").appendChild(renderer.view);
-
-    // Return the reference of the renderer
-    return renderer;
-};
-
-/**
- *  Loads the resources we need in the Game
- *  and calls the provided callback when done.
- *
- *  @param {Function}       cb      The function to call when the loading is completed
- *
- *  @returns {Void}
- */
-const loadResources = cb => {
-
-    // List of resources to load
-    const resources = ["images/ghost.png"];
-
-    // Add the resources and trigger Callback when loaded
-    PIXI.loader
-        .add(resources)
-        // .on("progress", loader => console.log(`${loader.progress}% completed`))
-        .load(cb);
-};
-
-/**
- *  Fetches the (preloaded) texture by filename
- *
- *  @param {String}     name    Name of the texture to load
- *
- *  @returns {PIXITexture}      The texture
- */
-const getTexture = name => PIXI.loader.resources[name].texture;
 
 // Define the main game loop
 const redraw = (time, renderer) => {
@@ -96,8 +46,11 @@ const setup = () => {
 // Wait until the page is fully loaded
 window.addEventListener("load", () => {
 
+    // List of resources to load
+    const resources = ["images/ghost.png"];
+
     // Then load the images
-    loadResources(() => {
+    preloadResources(resources, () => {
 
         // Then run the setup() function
         setup();
