@@ -19,12 +19,7 @@ export default {
     plugins: [
         new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.NoErrorsPlugin(),
-        new webpack.HotModuleReplacementPlugin(),
-        new copyWebpackPlugin([
-            { from: path.resolve(__dirname, "../node_modules/pixi.js/bin/pixi.min.js"), to: "js/lib/" },
-            { from: path.resolve(__dirname, "../node_modules/pixi.js/bin/pixi.js"), to: "js/lib/" },
-            { from: path.resolve(__dirname, "../node_modules/pixi.js/bin/pixi.map"), to: "js/lib/" }
-        ])
+        new webpack.HotModuleReplacementPlugin()
     ],
 
     module: {

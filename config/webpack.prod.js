@@ -24,7 +24,6 @@ export default {
             root: path.resolve(__dirname, "..")
         }),
         new copyWebpackPlugin([
-            { from: path.resolve(__dirname, "../node_modules/pixi.js/bin/pixi.min.js"), to: "js/lib/" },
             { from: path.resolve(__dirname, "../static") }
         ])
     ],
