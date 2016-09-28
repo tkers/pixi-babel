@@ -1,0 +1,36 @@
+{
+  "name": "pixi-babel",
+  "version": "0.0.1",
+  "description": "Pixi boilerplate with Webpack and Babel",
+  "main": "index.js",
+  "scripts": {
+    "dev": "babel-node devServer",
+    "build": "babel-node ./node_modules/.bin/webpack --verbose --colors --display-error-details --config config/webpack.prod.js && open dist/index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lapixx/pixi-babel.git"
+  },
+  "author": "Tijn Kersjes <tijn@divbyzero.nl>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Lapixx/pixi-babel/issues"
+  },
+  "homepage": "https://github.com/Lapixx/pixi-babel#readme",
+  "devDependencies": {
+    "babel-eslint": "^6.1.2",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "clean-webpack-plugin": "^0.1.10",
+    "copy-webpack-plugin": "^3.0.1",
+    "eslint": "^3.6.1",
+    "eslint-loader": "^1.5.0",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.1"
+  },
+  "dependencies": {
+    "pixi.js": "^4.0.2"
+  }
+}
