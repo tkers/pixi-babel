@@ -48,7 +48,7 @@ const setup = () => {
 
     // Perform initial render
     redraw(-1, renderer);
-}
+};
 
 /* ---------- Initialisation ---------- */
 

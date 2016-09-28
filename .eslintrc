@@ -1,11 +1,56 @@
 {
-    "parser": "babel-eslint",
-    "extends": [
-        "eslint:recommended"
-    ],
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module"
+    },
     "env": {
         "browser": true,
         "node": true,
         "es6": true
+    },
+    "extends": [
+        "eslint:recommended"
+    ],
+    "rules": {
+        "semi": ["error", "always"],
+        "eqeqeq": ["error", "always"],          // `===`/`!===` instead of `==`/`!=`
+        "no-var": "error",                      // `let`/`const` instead of `var`
+        "prefer-const": "error",                // `const` instead of `let`
+
+        /* ----- useless code ------ */
+        "no-lonely-if": "error",                // `else if` instead of `else { if {`
+
+        /* ------ debug leftovers ----- */
+        "no-alert": "error",                    // no `window.alert` or `window.prompt`
+
+        /* ------ shorthand / es6 ----- */
+        "no-array-constructor": "error",        // `[1, 2]` instead of `new Array(1, 2)`
+        "no-new-object": "error",               // `{}` instead of `new Object()`
+        "prefer-rest-params": "error",          // `(...args)` instead of `arguments`
+        "prefer-spread": "error",               // `fn(...xs)` instead of `fn.apply(xs)`
+        "prefer-arrow-callback": "error",
+
+        /* ----- complexity ----- */
+        "max-statements-per-line": "warn",
+        "max-statements": ["warn", 100],
+        "max-params": ["warn", 8],
+        "max-nested-callbacks": ["warn", 4],
+        "max-depth": ["warn", 4],
+        "max-lines": ["warn", 1000],
+
+        /* ----- stylistic ------ */
+
+        "new-cap": "error",
+        "camelcase": "error",
+        "brace-style": ["error", "stroustrup"],
+        "indent": "error",
+
+        "curly": ["error", "multi"],            // curly braces around multiple statements only
+        "block-spacing": "error",
+        "dot-notation": "error",                // `x.y` instead of `x["y"]`
+        "rest-spread-spacing": ["error", "never"],   // `...xs` instead of `... xs`
+        "arrow-spacing": ["error", { "before": true, "after": true }],   // `x => x` instead of `x=>x`
+        "space-in-parens": ["error", "never"],
+        "object-curly-spacing": ["error", "always"],
     }
 }
