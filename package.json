@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "babel-node devServer",
-    "build": "babel-node ./node_modules/.bin/webpack --verbose --colors --display-error-details --config config/webpack.prod.js && open dist/index.html",
+    "build": "babel-node ./node_modules/.bin/webpack --verbose --colors --display-error-details --config config/webpack.prod.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
