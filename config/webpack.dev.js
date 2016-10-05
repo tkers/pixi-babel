@@ -37,7 +37,7 @@ export default {
             ],
             loader: "babel-loader",
         }],
-        noParse: /node_modules/
+        noParse: /node_modules\/pixi\.js/
     },
 
     eslint: {
