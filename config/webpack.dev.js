@@ -4,9 +4,7 @@ import copyWebpackPlugin from "copy-webpack-plugin";
 
 export default {
 
-    entry: {
-        app: ["./src/index.js"]
-    },
+    entry: ["babel-polyfill", "./src/index.js"],
 
     output: {
         path: "/",
