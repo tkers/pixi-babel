@@ -4,3 +4,6 @@ npm-debug.log
 
 # build artifacts
 dist/
+
+# editors
+.idea/
