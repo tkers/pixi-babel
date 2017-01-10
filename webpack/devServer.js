@@ -3,7 +3,7 @@ const PORT = parseInt(process.argv[2]) || 8080;
 import webpack from "webpack";
 import webpackDevServer from "webpack-dev-server";
 
-import webpackDevConfig from "./config/webpack.dev.js";
+import webpackDevConfig from "./config.dev.js";
 webpackDevConfig.entry.unshift(`webpack-dev-server/client?http://localhost:${PORT}`, "webpack/hot/dev-server");
 
 const compiler = webpack(webpackDevConfig);

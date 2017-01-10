@@ -1,4 +1,4 @@
-import PIXI from "pixi.js";
+import * as PIXI from "pixi.js";
 
 /**
  *  Loads the resources we need in the Game

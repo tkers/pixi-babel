@@ -1,4 +1,4 @@
-import PIXI from "pixi.js";
+import * as PIXI from "pixi.js";
 
 /**
  *  Fetches the (preloaded) texture by filename

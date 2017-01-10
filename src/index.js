@@ -1,4 +1,4 @@
-import PIXI from "pixi.js";
+import * as PIXI from "pixi.js";
 import initRenderer from "./initRenderer";
 import preloadResources from "./preloadResources";
 import getTexture from "./getTexture";
